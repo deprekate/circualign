@@ -29,7 +29,7 @@ for row in reader:
 	coords[k] = int(v)
 
 for name in nucleotide_dict:
-	start = coords[name]
+	start = coords[name] #.get(name, 0)
 	nucleotides = nucleotide_dict[name]
 	if start < 0:
 		tab = str.maketrans(old_chars,replace_chars)
