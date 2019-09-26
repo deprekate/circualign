@@ -23,6 +23,7 @@ cat genomes/* | blastn -subject marker.fasta -outfmt 6 -dust no -word_size 7 | p
 ```
 
 
+Run the main circulaline script by supplying the folder of the genomes and the locations file.
 ```sh
 $ python3 circulaline.py genomes/ locations.tsv 
 >one
