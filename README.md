@@ -15,7 +15,9 @@ ggggggggggggggggggggaaaaaaaaaaaaaaaaaaaacccccccccccccccccccctttttttttttttttttttt
 tttttttttccccccccccccccccccccaaaaaaaaaaaaaaaaaaaaggggggggggggggggggggttttttttttt
 ```
 
-The first step is finding a common starting point.  One way to do this is to supply a marker sequence/gene to blastn (the -dust and -word_size flags are for this specific small example, and not needed for typical queries).  The tab delimited output from blast is then piped to the script `get_locations.py`, which determines the alignment direction (same direction or reverse complemented) and pulls out the according query start column.  The output is then stored in a 'locations' file.
+1. The first step is finding a common starting point.  One way to do this is to supply a marker sequence/gene to blastn (the -dust and -word_size flags are for this specific small example, and not needed for typical queries).
+2. The tab delimited output from blast is then piped to the script `get_locations.py`, which determines the alignment direction (same direction or reverse complemented) and pulls out the according query start column.
+3. The output is then stored in a 'locations' file.
 ```sh
 cat genomes/* | blastn -subject marker.fasta -outfmt 6 -dust no -word_size 7 | python3 get_location.py > locations.tsv
 ```
