@@ -35,6 +35,6 @@ for name in nucleotide_dict:
 		tab = str.maketrans(old_chars,replace_chars)
 		nucleotides = nucleotides.translate(tab)[::-1]
 		start += 1
-
+	print(">", name, sep="")
 	print(nucleotides[start:] + nucleotides[:start])
 
